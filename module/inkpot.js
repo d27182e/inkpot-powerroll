@@ -8,7 +8,8 @@ Hooks.once('init', async function() {
 
   //Handle power rolls when clicked inside the chat log.
   Hooks.on("renderChatLog", (app, html, data) => {
-    html.on('click', 'a.power-roll', event => {
+	var jhtml = $(app.element);
+    jhtml.on('click', 'a.power-roll', event => {
       const button = event.currentTarget;
       const card = button.closest(".chat-card");
       //Check the current system version as the namespace changes in 0.4.44 to remove the word Beta
@@ -21,7 +22,8 @@ Hooks.once('init', async function() {
 
   //Handle power rolls when clicked inside an Actor Sheet.
   Hooks.on("renderActorSheet4e", (app, html, data) => {
-    html.on('click', 'a.power-roll', event => {
+	var jhtml = $(app.element);
+    jhtml.on('click', 'a.power-roll', event => {
       const actor = app.object;
       const itemId = event.currentTarget.closest(".item")?.dataset?.itemId;
       const item = itemId ? actor.items.get(itemId) : undefined;
@@ -31,7 +33,8 @@ Hooks.once('init', async function() {
 
   //Handle power rolls when clicked inside an Item Sheet.
   Hooks.on("renderItemSheet4e", (app, html, data) => {
-    html.on('click', 'a.power-roll', event => {
+	var jhtml = $(app.element);
+    jhtml.on('click', 'a.power-roll', event => {
       const item = app.object;
       const actor = item.parent;
       PowerRoll4e.onPowerRoll(event, actor, item, item);
@@ -40,7 +43,8 @@ Hooks.once('init', async function() {
 
   //Handle power rolls when clicked inside a Journal.
   Hooks.on("renderJournalSheet", (app, html, data) => {
-    html.on('click', 'a.power-roll', event => {
+	var jhtml = $(app.element);
+    jhtml.on('click', 'a.power-roll', event => {
       PowerRoll4e.onPowerRoll(event, undefined, undefined, app);
     });
   });
