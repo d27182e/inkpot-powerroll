@@ -1,9 +1,9 @@
 {
   "title": "Ink Pot - Power Roll",
   "description": "A module that allows inline rolling of D&amp;D 4e power attacks, damage, and resource spending.",
-  "url": "https://github.com/kyleady/inkpot-powerroll",
-  "manifest": "https://github.com/kyleady/inkpot-powerroll/releases/latest/download/module.json",
-  "download": "https://github.com/kyleady/inkpot-powerroll/releases/latest/download/module.zip",
+  "url": "https://github.com/d27182e/inkpot-powerroll",
+  "manifest": "https://github.com/d27182e/inkpot-powerroll/releases/latest/download/module.json",
+  "download": "https://github.com/d27182e/inkpot-powerroll/releases/latest/download/module.zip",
   "esmodules": [
     "module/inkpot.js"
   ],
@@ -21,7 +21,7 @@
   "styles": [
     "styles/inkpot.css"
   ],
-  "version": "1.3.1",
+  "version": "1.3.2",
   "id": "inkpot-powerroll",
   "authors": [
     {
@@ -39,8 +39,8 @@
     ]
   },
   "compatibility": {
-    "minimum": "10",
-    "verified": "10"
+    "minimum": "13",
+    "verified": "13"
   },
   "socket": true
 }
