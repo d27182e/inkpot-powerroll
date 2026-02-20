@@ -24,7 +24,7 @@ Hooks.once('init', async function() {
   Hooks.on("renderActorSheet4e", (app, html, data) => {
 	var jhtml = $(app.element);
     jhtml.on('click', 'a.power-roll', event => {
-      const actor = app.object;
+      const actor = app.actor;
       const itemId = event.currentTarget.closest(".item")?.dataset?.itemId;
       const item = itemId ? actor.items.get(itemId) : undefined;
       PowerRoll4e.onPowerRoll(event, actor, item, item || actor);
@@ -35,14 +35,14 @@ Hooks.once('init', async function() {
   Hooks.on("renderItemSheet4e", (app, html, data) => {
 	var jhtml = $(app.element);
     jhtml.on('click', 'a.power-roll', event => {
-      const item = app.object;
-      const actor = item.parent;
-      PowerRoll4e.onPowerRoll(event, actor, item, item);
+	  const item = app.document;
+	  const actor = app.actor;
+      PowerRoll4e.onPowerRoll(event, actor, item, item || actor);
     });
   });
 
   //Handle power rolls when clicked inside a Journal.
-  Hooks.on("renderJournalSheet", (app, html, data) => {
+  Hooks.on("renderJournalEntryPageSheet", (app, html, data) => {
 	var jhtml = $(app.element);
     jhtml.on('click', 'a.power-roll', event => {
       PowerRoll4e.onPowerRoll(event, undefined, undefined, app);
